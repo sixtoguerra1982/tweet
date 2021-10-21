@@ -1,2 +1,21 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<h1>Tweets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th>User</th>
+      <th>Photo</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tweets.each do |tweet| %>
+      <tr>
+        <td><%= tweet.content %></td>
+        <td><%= tweet.user %></td>
+        <td><%= image_tag(tweet.user.url_photo , size: "30x30") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
