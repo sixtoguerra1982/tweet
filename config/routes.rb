@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  # resources :tweets
+  # get 'likes/create'
+  resources :tweets do
+    resources :likes, only: [:create]
+  end
   # devise_for :users
-
+  
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
